@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="Virtuality.png" type="Image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Virtuality Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="user.html">Users</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="index.html">Log out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Overview</h1>
+                <div class="header-actions">
+                    <input type="search" placeholder="Search...">
+                    <button>Notifications</button>
+                    <button>Profile</button>
+                </div>
+            </header>
+
+            <section class="chart-section">
+                <div class="chart-controls">
+                    <button class="chart-btn active" data-chart-type="daily">Daily</button>
+                    <button class="chart-btn" data-chart-type="weekly">Weekly</button>
+                    <button class="chart-btn" data-chart-type="monthly">Monthly</button>
+                    <button class="chart-btn" data-chart-type="yearly">Yearly</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </section>
+
+            <section class="data-cards">
+                <div class="card">
+                    <h3>Total Sales</h3>
+                    <p>$345</p>
+                </div>
+                <div class="card">
+                    <h3>New Users</h3>
+                    <p>150</p>
+                </div>
+                <div class="card">
+                    <h3>New Companies</h3>
+                    <p>25</p>
+                </div>
+                <div class="card">
+                    <h3>Revenue Growth</h3>
+                    <p>+5%</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

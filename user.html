@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Dashboard</title>
+    <link rel="stylesheet" href="user.css">
+    <link rel="icon" href="Virtuality.png" type="Image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Virtuality Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="admin.html" >Dashboard</a></li>
+                    <li><a href="#" class="active">Users</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="index.html">Log out</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="users-page-container">
+        <header class="users-header">
+            <h1><i class="fas fa-users"></i> User Management</h1>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search users...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn btn-add-user"><i class="fas fa-plus"></i> Add New User</button>
+            </div>
+        </header>
+
+        <main class="users-main-content">
+            <div class="table-responsive">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Last Active</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="ID">101</td>
+                            <td data-label="Name">Carl Muyco</td>
+                            <td data-label="Email">carl.s@example.com</td>
+                            <td data-label="Role"><span class="role-badge admin">Student</span></td>
+                            <td data-label="Status"><span class="status-badge active">Active</span></td>
+                            <td data-label="Last Active">2024-05-24 10:30 AM</td>
+                            <td data-label="Actions" class="actions-cell">
+                                <button class="action-btn edit-btn" title="Edit User"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" title="Delete User"><i class="fas fa-trash-alt"></i></button>
+                                <button class="action-btn view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="ID">102</td>
+                            <td data-label="Name">ABC company</td>
+                            <td data-label="Email">ABC.j@example.com</td>
+                            <td data-label="Role"><span class="role-badge editor">Company</span></td>
+                            <td data-label="Status"><span class="status-badge inactive">Inactive</span></td>
+                            <td data-label="Last Active">2024-05-20 03:00 PM</td>
+                            <td data-label="Actions" class="actions-cell">
+                                <button class="action-btn edit-btn" title="Edit User"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" title="Delete User"><i class="fas fa-trash-alt"></i></button>
+                                <button class="action-btn view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="ID">103</td>
+                            <td data-label="Name">Muyco Brown</td>
+                            <td data-label="Email">Muyco.b@example.com</td>
+                            <td data-label="Role"><span class="role-badge member">Student</span></td>
+                            <td data-label="Status"><span class="status-badge active">Active</span></td>
+                            <td data-label="Last Active">2024-05-23 09:15 AM</td>
+                            <td data-label="Actions" class="actions-cell">
+                                <button class="action-btn edit-btn" title="Edit User"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" title="Delete User"><i class="fas fa-trash-alt"></i></button>
+                                <button class="action-btn view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="ID">104</td>
+                            <td data-label="Name">Marc Ramos</td>
+                            <td data-label="Email">ramos.p@example.com</td>
+                            <td data-label="Role"><span class="role-badge admin">Student</span></td>
+                            <td data-label="Status"><span class="status-badge active">Active</span></td>
+                            <td data-label="Last Active">2024-05-24 11:00 AM</td>
+                            <td data-label="Actions" class="actions-cell">
+                                <button class="action-btn edit-btn" title="Edit User"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" title="Delete User"><i class="fas fa-trash-alt"></i></button>
+                                <button class="action-btn view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn disabled">Previous</button>
+                <span class="page-info">Page 1 of 5</span>
+                <button class="pagination-btn">Next</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

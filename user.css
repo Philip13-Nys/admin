@@ -1,0 +1,488 @@
+/* Basic Reset & Body Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #022c18; /* Dark blue */
+    color: #ecf0f1; /* Light gray */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-header h2 {
+    color: #ecf0f1;
+    font-size: 1.8em;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+    background-color: #024b27; /* Slightly lighter dark blue */
+    color: #ffffff;
+}
+
+.users-page-container {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.users-header {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    gap: 15px; /* Spacing between header elements */
+}
+
+.users-header h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Spacing between search and add button */
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    flex-grow: 1;
+}
+
+.search-bar button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #28a745;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.btn-add-user {
+    background-color: #2ecc71; /* Green */
+    color: white;
+}
+
+.btn-add-user:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.users-main-content {
+    background-color: #fdfdfd;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Table */
+.table-responsive {
+    overflow-x: auto; /* Allows table to scroll horizontally on small screens */
+    margin-bottom: 20px;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Ensures table doesn't get too narrow before breaking */
+}
+
+.users-table th,
+.users-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.users-table thead th {
+    background-color: #e9eef2;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.users-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Badges for Role and Status */
+.role-badge,
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.role-badge.admin { background-color: #f39c12; color: white; } /* Orange */
+.role-badge.editor { background-color: #3498db; color: white; } /* Blue */
+.role-badge.member { background-color: #f39c12; color: white; } /* Gray */
+
+.status-badge.active { background-color: #2ecc71; color: white; } /* Green */
+.status-badge.inactive { background-color: #e74c3c; color: white; } /* Red */
+
+/* Actions Buttons */
+.actions-cell {
+    white-space: nowrap; /* Prevent buttons from wrapping */
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.edit-btn:hover { color: #3498db; }
+.delete-btn:hover { color: #e74c3c; }
+.view-btn:hover { color: #2ecc71; }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background-color: #e0e0e0;
+}
+
+.pagination-btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f0f0f0;
+}
+
+.page-info {
+    color: #555;
+    font-weight: bold;
+}
+
+/* Responsive Table (Small Screens) */
+@media (max-width: 768px) {
+    .users-page-container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .users-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .users-header h1 {
+        margin-bottom: 15px;
+        font-size: 1.8em;
+    }
+
+    .header-actions {
+        width: 100%;
+        flex-direction: column; /* Stack actions vertically */
+        gap: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .btn-add-user {
+        width: 100%;
+        justify-content: center; /* Center icon and text */
+    }
+
+    /* Transform table into cards */
+    .users-table {
+        border: none;
+        min-width: unset; /* Remove min-width to allow collapsing */
+    }
+
+    .users-table thead {
+        display: none; /* Hide table header */
+    }
+
+    .users-table, .users-table tbody, .users-table tr, .users-table td {
+        display: block; /* Make table elements act as block-level elements */
+        width: 100%;
+    }
+
+    .users-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+    }
+
+    .users-table td {
+        border: none; /* Remove individual cell borders */
+        padding: 10px 15px;
+        position: relative;
+        text-align: right; /* Align value to the right */
+        padding-left: 50%; /* Make space for the label */
+    }
+
+    .users-table td::before {
+        content: attr(data-label); /* Use data-label for the pseudo-element content */
+        position: absolute;
+        left: 15px;
+        width: calc(50% - 30px); /* Adjust width to fit */
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .users-table .actions-cell {
+        display: flex; /* Make actions row use flexbox */
+        justify-content: space-around;
+        padding-left: 15px; /* Reset padding for actions */
+        padding-right: 15px;
+        background-color: #f9f9f9; /* Slightly different background for actions */
+        border-top: 1px solid #eee;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .users-table .actions-cell::before {
+        content: "Actions"; /* Override label for actions */
+        display: none; /* Hide pseudo-element for actions row as buttons are self-explanatory */
+    }
+}
+
+@media (max-width: 480px) {
+    .users-header h1 {
+        font-size: 1.5em;
+    }
+
+    .search-bar input,
+    .search-bar button,
+    .btn-add-user {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    .users-table td {
+        padding-left: 40%; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px; /* Slightly smaller sidebar */
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Stack sidebar and main content */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto; /* Allow sidebar to take natural height */
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: static; /* Remove fixed positioning if any */
+    }
+
+    .sidebar-header {
+        margin-bottom: 15px;
+    }
+
+    .sidebar-nav ul {
+        display: flex; /* Arrange nav items horizontally */
+        flex-wrap: wrap; /* Wrap if not enough space */
+        justify-content: center;
+    }
+
+    .sidebar-nav ul li {
+        margin: 0 5px 10px 5px; /* Adjust margins for horizontal layout */
+    }
+
+    .main-header {
+        flex-direction: column; /* Stack header elements */
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .main-header h1 {
+        margin-bottom: 10px;
+    }
+
+    .header-actions {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-actions input[type="search"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%; /* Full width search */
+    }
+
+    .header-actions button {
+        flex-grow: 1; /* Make buttons expand */
+        margin-bottom: 10px;
+        margin-left: 0; /* Remove left margin for buttons */
+        margin-right: 10px; /* Add right margin for spacing */
+    }
+
+    .header-actions button:last-child {
+        margin-right: 0; /* No right margin for last button */
+    }
+
+    .chart-controls {
+        display: flex; /* Arrange chart buttons horizontally */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .chart-btn {
+        flex-grow: 1;
+        margin: 5px; /* Adjust button margins */
+    }
+
+    .chart-container {
+        height: 300px; /* Slightly smaller chart on smaller screens */
+    }
+
+    .data-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller min-width for cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.5em;
+    }
+
+    .header-actions button {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    .chart-btn {
+        font-size: 0.85em;
+        padding: 8px 15px;
+    }
+
+    .chart-container {
+        height: 250px; /* Even smaller chart */
+    }
+
+    .card h3 {
+        font-size: 1em;
+    }
+
+    .card p {
+        font-size: 1.5em;
+    }
+}
