@@ -1,0 +1,329 @@
+/* Basic Reset & Body Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Payment Options */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.payment-option {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #fcfcfc;
+}
+
+.payment-option:hover {
+    border-color: #a0a0a0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; /* Make radio button itself not clickable */
+}
+
+.payment-option input[type="radio"] + label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    padding-left: 35px; /* Space for custom radio button */
+    position: relative;
+}
+
+.payment-option input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.payment-option input[type="radio"] + label::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+  
+    background-color: #5dbc50;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.payment-option input[type="radio"]:checked + label::before {
+    border-color: #5dbc50;
+    background-color: #e6f2ff;
+}
+
+.payment-option input[type="radio"]:checked + label::after {
+    opacity: 1;
+}
+
+.payment-option input[type="radio"]:checked ~ .card-details,
+.payment-option input[type="radio"]:checked ~ .gcash-details,
+.payment-option input[type="radio"]:checked ~ .maya-details,
+.payment-option input[type="radio"]:checked ~ .bank-details {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Icons and Logos for payment methods */
+.payment-option label i {
+    margin-right: 10px;
+    font-size: 1.5em;
+    color: #555;
+}
+
+.payment-option label .fa-cc-visa { color: #063a1a; }
+.payment-option label .fa-cc-mastercard { color: #eb001b; }
+.payment-option label .fa-cc-amex { color: #2ebb69; }
+.payment-option label .fa-university { color: #5a6a7c; }
+
+.payment-logo {
+    height: 24px; /* Adjust as needed */
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Form Groups for Details */
+.card-details, .gcash-details, .maya-details, .bank-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* Ensure white background for readonly inputs */
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #5dbc50;
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.25);
+    outline: none;
+}
+
+/* Specific styling for readonly inputs in bank transfer details */
+.bank-info input[type="text"][readonly] {
+    background-color: #f8f8f8; /* A slight different background for readonly */
+    cursor: default;
+}
+
+
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+    margin-bottom: 0; /* Remove bottom margin for internal groups */
+}
+
+p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #6a6a6a;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+/* Hidden Class for details */
+.hidden {
+    display: none;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #28a745;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.buttons a{
+  text-decoration: none;
+  color: black;
+  margin-top: 30px;
+}
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .payment-option {
+        padding: 15px;
+    }
+
+    .payment-option label {
+        font-size: 1em;
+    }
+
+    .payment-option label i, .payment-logo {
+        font-size: 1.3em;
+        height: 20px; /* Adjust for smaller screens */
+    }
+
+    .form-group-row {
+        flex-direction: column;
+        gap: 0; /* Remove gap in column layout */
+    }
+
+    .form-group-row .form-group {
+        margin-bottom: 15px; /* Add back margin for stacked groups */
+    }
+
+    .submit-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+
+    .payment-option {
+        padding: 12px;
+    }
+
+    .payment-option input[type="radio"] + label {
+        padding-left: 30px;
+    }
+
+    .payment-option input[type="radio"] + label::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    .payment-option input[type="radio"] + label::after {
+        left: 5px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .payment-option label i, .payment-logo {
+        height: 18px; /* Further adjust for very small screens */
+    }
+
+    .form-group input[type="text"] {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+
+    .submit-button {
+        font-size: 0.95em;
+        padding: 10px 15px;
+    }
+}
